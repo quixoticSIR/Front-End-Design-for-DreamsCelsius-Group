@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Services - Dreamcelsius Group</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Banner Styles */
+        .agricultural-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            background: linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa);
+        }
+
+        .banner-image {
+            max-width: 600px;
+            width: 90%;
+            height: auto;
+        }
+
+        /* Content Styles */
+        .agricultural-content {
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: #2C5282;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #4CAF50;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3 {
+            color: #1A365D;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .product-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-card li {
+            padding: 0.5rem 0;
+            color: #4A5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .product-card li::before {
+            content: '•';
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Info Sections */
+        .info-section {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-section h3 {
+            color: #2C5282;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .info-section p {
+            color: #2D3748;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Cultivars Section */
+        .cultivars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cultivar-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Slideshow */
+        .hero-slideshow {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slideshow 24s linear infinite;
+        }
+
+        @keyframes slideshow {
+            0%, 20% {
+                opacity: 0;
+            }
+            4%, 16% {
+                opacity: 1;
+            }
+        }
+
+        .slide:nth-child(1) { animation-delay: 0s; }
+        .slide:nth-child(2) { animation-delay: 6s; }
+        .slide:nth-child(3) { animation-delay: 12s; }
+        .slide:nth-child(4) { animation-delay: 18s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .agricultural-content {
+                padding: 2rem 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .info-section {
+                padding: 1.5rem;
+            }
+
+            .hero-slideshow {
+                height: 40vh;
+            }
+        }
+
+        /* Product Categories */
+        .product-categories {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-box {
+            aspect-ratio: 1/1; /* Makes boxes square */
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Makes image cover the entire space */
+            object-position: center;
+        }
+
+        .category-label {
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: #2D3748;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Harvest Calendar */
+        .harvest-calendar {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .calendar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .calendar-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Vegetables Section */
+        .vegetables-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .vegetables-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .vegetable-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .vegetable-list li {
+            padding: 0.5rem 0;
+            color: #4A5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .vegetable-list li::before {
+            content: '•';
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        .vegetables-calendar {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../CSi/dreamcelsius-logo.png" alt="Dreamcelsius Group Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../home.html">🏠 Home</a></li>
+            <li><a href="../divisions.html"><i class="fas fa-carrot"></i> Divisions</a></li>
+            <li><a href="../shop.html">🛒 Shop</a></li>
+            <li><a href="../csi.html"><i class="fas fa-hands-helping"></i> CSI</a></li>
+            <li><a href="../contact.html" class="contact-link">📞 Contact Us</a></li>
+            <li><a href="../about.html"><i class="fas fa-apple-alt"></i> About</a></li>
+        </ul>
+        <a href="../enquiry.html" class="quick-enquiry-btn"><i class="fas fa-envelope-open-text"></i> QUICK ENQUIRY</a>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="agricultural-banner">
+        <img src="agriculture/Picture27.png" alt="High Quality Agricultural Products" class="banner-image">
+    </div>
+
+    <section class="agricultural-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Dream Agriculture</h2>
+                <p>Founded in 2015, Dream Agriculture division stands as the African leading food producer, exporter and supplier-focused division of Dreamcelsius Group's agribusiness.</p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Fresh Produce</h3>
+                    <ul>
+                        <li>Fruits & Vegetables</li>
+                        <li>Citrus Fruits</li>
+                        <li>Horticulture</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <h3>Grains & Seeds</h3>
+                    <ul>
+                        <li>Maize (white & yellow)</li>
+                        <li>Rice, Wheat, Oats</li>
+                        <li>Sesame seeds, Soybean</li>
+                        <li>Sunflower seeds</li>
+                    </ul>
+                </div>
+
+                <div class="product-card">
+                    <h3>Specialty Products</h3>
+                    <ul>
+                        <li>Medical cannabis</li>
+                        <li>Industrial hemp</li>
+                        <li>Forest products</li>
+                        <li>Edible oils</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Our Mission</h3>
+                <p>The Group is fully black owned with the focus on growing, packing, distribution, sourcing, marketing and export of high-grade agricultural produce worldwide. We are responsible for farming and export operations connecting farmers to consumers in different international markets.</p>
+                <p>Food production must be more than double to feed the growing population and production need to increase using the resources available. We work hand in hand with local farmers, producers, silo owners, traders and suppliers to deliver high quality agricultural products.</p>
+            </div>
+
+            <div class="info-section">
+                <h3>Growth & Investment</h3>
+                <p>In South Africa the country's population is growing almost 2% per year, expected to reach 82 million by 2035. The group is investing in 80,000 hectares of farmland across the country for Commercial farming and agricultural production.</p>
+            </div>
+
+            <div class="info-section">
+                <h3>Our Cultivars</h3>
+                <p>We farm, pack, distribute and export high-grade fresh fruit from African soil all seasons.</p>
+                <div class="cultivars-grid">
+                    <div class="cultivar-item">Lemons</div>
+                    <div class="cultivar-item">Mid-season and late navels</div>
+                    <div class="cultivar-item">Late mandarins – Nadorcott</div>
+                    <div class="cultivar-item">Valencias – Midnight, Delta</div>
+                    <div class="cultivar-item">Grapefruit – Star Ruby</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-slideshow">
+        <div class="slide" style="background-image: url('agriculture/Picture23.jpg')"></div>
+        <div class="slide" style="background-image: url('agriculture/Picture24.png')"></div>
+        <div class="slide" style="background-image: url('agriculture/Picture25.jpg')"></div>
+        <div class="slide" style="background-image: url('agriculture/Picture26.jpg')"></div>
+    </section>
+
+    <section class="product-categories">
+        <div class="container">
+            <h2 class="section-title">Our Product Categories</h2>
+            <div class="categories-grid">
+                <div class="category-box">
+                    <div class="category-image">
+                        <img src="agriculture/Picture28.jpg" alt="Soft Citrus">
+                    </div>
+                    <div class="category-label">Soft Citrus</div>
+                </div>
+                <div class="category-box">
+                    <div class="category-image">
+                        <img src="agriculture/Picture29.jpg" alt="Orange">
+                    </div>
+                    <div class="category-label">Orange</div>
+                </div>
+                <div class="category-box">
+                    <div class="category-image">
+                        <img src="agriculture/Picture30.jpg" alt="Lemon">
+                    </div>
+                    <div class="category-label">Lemon</div>
+                </div>
+                <div class="category-box">
+                    <div class="category-image">
+                        <img src="agriculture/Picture31.jpg" alt="Grapefruit">
+                    </div>
+                    <div class="category-label">Grapefruit</div>
+                </div>
+                <div class="category-box">
+                    <div class="category-image">
+                        <img src="agriculture/Picture32.jpg" alt="Edible Oils">
+                    </div>
+                    <div class="category-label">Edible Oils</div>
+                </div>
+                <div class="category-box">
+                    <div class="category-image">
+                        <img src="agriculture/Picture33.jpg" alt="Grains">
+                    </div>
+                    <div class="category-label">Grains</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="harvest-calendar">
+        <div class="container">
+            <h2 class="section-title">South African Fresh Produce Calendar</h2>
+            <div class="calendar-container">
+                <img src="agriculture/Picture34.png" alt="South African Fresh Produce Calendar" class="calendar-image">
+            </div>
+        </div>
+    </section>
+    <section class="vegetables-section">
+        <div class="container">
+            <h2 class="section-title">Vegetables Production Calendar</h2>
+            <div class="vegetables-info">
+                <p>Our vegetable production follows a carefully planned seasonal calendar to ensure year-round supply of fresh produce:</p>
+                <ul class="vegetable-list">
+                    <li>Carrots</li>
+                    <li>Broccoli</li>
+                    <li>Sweet potato</li>
+                    <li>Beetroot</li>
+                </ul>
+            </div>
+            <div class="vegetables-calendar">
+                <img src="agriculture/Picture35.png" alt="Vegetables Production Calendar" class="calendar-image">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer as main page -->
+    </footer>
+</body>
+</html>

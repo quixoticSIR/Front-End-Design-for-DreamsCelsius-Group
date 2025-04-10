@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Enquiry - Dreamcelsius Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="CSi/dreamcelsius-logo.png" alt="Dreamcelsius Group - Create a better tomorrow today" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">🏠 Home</a></li>
+            <li><a href="divisions.html"><i class="fas fa-carrot"></i> Divisions</a></li>
+            <li><a href="shop.html">🛒 Shop</a></li>
+            <li><a href="csi.html"><i class="fas fa-hands-helping"></i> CSI</a></li>
+            <li><a href="contact.html" class="contact-link">📞 Contact Us</a></li>
+            <li><a href="about.html"><i class="fas fa-apple-alt"></i> About</a></li>
+        </ul>
+        <a href="enquiry.html" class="quick-enquiry-btn"><i class="fas fa-envelope-open-text"></i> QUICK ENQUIRY</a>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section class="enquiry-section">
+        <div class="container">
+            <div class="enquiry-header">
+                <h1>Quick Enquiry</h1>
+                <p>We'd love to hear from you. Please fill out this form and we'll get back to you promptly.</p>
+            </div>
+
+            <div class="enquiry-form-container">
+                <form class="enquiry-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department *</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="trading">Import & Export Trading</option>
+                            <option value="office">Office & Stationery</option>
+                            <option value="multimedia">Multimedia</option>
+                            <option value="cleaning">Cleaning Services</option>
+                            <option value="security">Security Services</option>
+                            <option value="csi">CSI & Foundation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Enquiry
+                        </button>
+                    </div>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p>+27 87 510 1816</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>info@dreamcelsius.co.za</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visit Us</h3>
+                        <p>30-38 Joubert St, Johannesburg 2000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 30-38 Joubert St, Johannesburg 2000</p>
+                <p><i class="fas fa-phone"></i> 087 510 1816</p>
+                <p><i class="fas fa-envelope"></i> info@dreamcelsius.co.za</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dreamcelsius Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
